@@ -1,0 +1,33 @@
+<div class="list">
+  <div>
+    <div class="list-sort">
+      <span>Sort by:</span>
+      <app-button
+        label="Download Speed"
+        [arrowClass]="sortDirection.downloadSpeed"
+        (click)="sortList('downloadSpeed')"
+      ></app-button>
+      <app-button
+        label="Upload Speed"
+        [arrowClass]="sortDirection.uploadSpeed"
+        (click)="sortList('uploadSpeed')"
+      ></app-button>
+      <app-button
+        label="Price"
+        [arrowClass]="sortDirection.price"
+        (click)="sortList('price')"
+      ></app-button>
+    </div>
+  </div>
+  <div *ngIf="tarifList.length; else elseBlock">
+    <div *ngFor="let tarif of tarifList">
+      <app-tarif-row [tarif]="tarif"></app-tarif-row>
+    </div>
+  </div>
+
+  <ng-template #elseBlock>
+    <div>
+      <p>No tarifs to show</p>
+    </div>
+  </ng-template>
+</div>

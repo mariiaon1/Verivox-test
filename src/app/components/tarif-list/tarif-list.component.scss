@@ -1,0 +1,13 @@
+@import "../../../styles.scss";
+
+.list {
+  border: 2px solid black;
+  padding: 8px;
+
+  &-sort {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    padding-right: 8px;
+  }
+}

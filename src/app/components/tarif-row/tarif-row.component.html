@@ -1,0 +1,33 @@
+<div class="tarif">
+  <div class="tarif-id">{{ tarif.id }}.</div>
+  <div class="tarif-name">
+    <p>{{ tarif.name }}</p>
+  </div>
+  <div class="tarif-load">
+    <p class="tarif-load-label">Download</p>
+    <div class="tarif-load-content">
+      <span class="tarif-load-icon">&darr;</span>
+      <span class="tarif-load-value"
+        >{{ tarif.downloadSpeed }}
+        <span class="tarif-load-info"> Mbit/s</span>
+      </span>
+    </div>
+    <p class="tarif-load-label">Upload</p>
+    <div class="tarif-load-content">
+      <span class="tarif-load-icon upload">&uarr;</span>
+      <span class="tarif-load-value upload"
+        >{{ tarif.uploadSpeed }}
+        <span class="tarif-load-info"> Mbit/s</span>
+      </span>
+    </div>
+  </div>
+  <div class="tarif-load-benefit">
+    <li *ngFor="let benefit of tarif.benefits">{{ benefit }}</li>
+  </div>
+  <div class="tarif-price">
+    <div>
+      <p class="tarif-price-value">{{ tarif.price }} &euro;</p>
+    </div>
+    <app-button label="Tarif details" buttonClass="detail"></app-button>
+  </div>
+</div>
